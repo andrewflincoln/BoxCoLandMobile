@@ -16,12 +16,8 @@ export default class Create extends Component {
   render() {
     return (
       <View>
-          Hey here is the new page for creating boxes!
+          <Text>Hey here is the new page for creating boxes!</Text>
       </View>
-
-
-
-
 
     );
   }
