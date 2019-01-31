@@ -1,29 +1,27 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, TouchableOpacity, TouchableNativeFeedback, Vibration} from 'react-native'
+import styles from '../styles'
 
-const Box = ({newBox}) => {
-  const {id, name, contents} = newBox
+const Box = (props) => {
+  const {id, name, contents} = props.newBox
   return(
-    <View style={styles.box}>
-      <Text>{id} - {name}</Text>
-      <Text>Contents: {contents}</Text>
-      
-    </View>
+    <TouchableNativeFeedback 
+    onLongPress={props.toggleModal} 
+    onPress={Vibration.vibrate([10, 100])}
+    >
+      <View style={styles.box}>
+        <Text>{id} - {name}</Text>
+        <Text>Contents: {
+              contents.map(item => {
+                if (contents.indexOf(item)  === contents.length - 1) return item
+                else return item + ', ' })
+            }
+        </Text>
+        
+      </View>
+    </TouchableNativeFeedback>
   )
 }
 
 export default Box
 
-
-const styles = StyleSheet.create({
-  box: {
-    marginBottom: 15,
-    marginRight: 10,
-    marginLeft: 10,
-    padding: 10,
-    borderWidth: 2,
-    borderRadius: 15,
-  }
-    
-
-});

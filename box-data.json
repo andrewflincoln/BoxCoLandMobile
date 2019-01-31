@@ -1,36 +1,45 @@
 
 [
-
   {"id": 1,
   "name": "Garage",
-  "contents": "Car, tools u& stuff, tennis rackets, tennis balls, basketball hoop, other car that i never drive"
+  "contents": ["car", "boat", "tennis rackets", "porpoise", "aviary accessories", "a dog"]
   },
   {"id": 2,
     "name": "Living room",
-    "contents": "Television, remote, slippers, dog, playstation, bearskin rug, alligatorskin rug"
+    "contents": ["television", "chaise-lounge", "a cat", "remote controls", "trampoline"]
   },
   {"id": 3,
-  "name": "Bathroom stuff",
-  "contents": "toothbrush, vanity, mirror, showerhead, medications, towels"
+  "name": "Bobbleheads",
+  "contents": ["David Wright", "Felix Hernandez", "Griffey/Ichiro", "Ron Darling", "Keith Hernandez", "Keith Hernandez (Seinfeld Night edition)"]
   },
   {"id": 4,
-  "name": "Lodash",
-  "contents": "A modern JavaScript utility library delivering modularity, performance, & extras. Lodash is released under the MIT license & supports modern environments."
+  "name": "Kitchen",
+  "contents": ["Blender", "Mixer", "little TV", "toaster", "deep fryer", "meat grinder", "beer", "SPOON!", "Keith Hernandez"]
   },
   {"id": 5,
-  "name": "Redux-Thunk",
-  "contents": "Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met."
+  "name": "SNES games",
+  "contents": ["Ken Griffey Jrs Winning Run", "Pilotwings", "Bomberman 2", "Donkey Kong Country", "Donkey Kong Country 3"]
   },
   {"id": 6,
-  "name": "ESLint",
-  "contents": "ESLint is an open source JavaScript linting utility originally created by Nicholas C. Zakas in June 2013. Code linting is a type of static analysis that is frequently used to find problematic patterns or code that doesn't adhere to certain style guidelines."
+  "name": "Blu-Rays",
+  "contents": ["The Godfather", "The Godfather II", "Baseketball", "Alien", "Aliens", "Wall-E", "The Terminator", "Terminator 2", "Maid in Manhattan"]
   },
   {"id": 7,
-  "name": "Babel",
-  "contents": "Babel has support for the latest version of JavaScript through syntax transformers. These plugins allow you to use new syntax, right now without waiting for browser support."
+  "name": "Board games",
+  "contents": ["Shark Attack", "Shark Attack Bowling", "Back off Buzzard", "Omega Virus", "Battleship", "Battleship II", "The Godfather III", "Keith Hernandez"]
   },
   {"id": 8,
-  "name": "Axios",
-  "contents": "Promise based HTTP client for the browser and node.js. With Axios, you can make XMLHttpRequests from the browser or Node with the full Promise Api."
+  "name": "Tools",
+  "contents": ["Hammer", "Screws", "Naildriver", "Screwhammer", "Staplenun", "Sharp stick thing", "car hairdryer", "grease monkey", "tactical gear"]
+  },
+  {
+    "id": 9,
+    "name": "Bools",
+    "contents": ["true", "false", "true", "true", "false", "false", "true", "true", "true", "Larry Bird", "false", "true", "true", "false"]
+  },
+  {
+    "id": 10,
+    "name": "Georges",
+    "contents": ["Curious", "Costanza", "C Scott", "Flinstone", "Gershwin", "Will", "Gephardt", "Orwell", "Clooney", "Ramone"]
   }
 ]
