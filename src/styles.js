@@ -1,31 +1,53 @@
 import React from 'react';
 import { StyleSheet} from 'react-native';
-import { withTheme } from 'react-native-elements';
-
 
 const styles = StyleSheet.create({
   box: {
-    // marginBottom: 7,
     marginTop: 10,
     marginRight: 20,
     marginLeft: 20,
-    padding: 10,
-    borderWidth: 2,
-    borderRadius: 15,
-    backgroundColor: '#FFA364'
+    padding: 7,
+    borderWidth: 1,
   },
-  BoxModal: {
+  boxHeader: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    borderBottomWidth: 1,
+    borderRadius: 1,
+    borderStyle: 'dashed'
+  },
+
+  boxModal: {
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+    width: '50%',
     alignItems: 'center',
-    marginTop: 1000,
-    alignSelf: 'center'
+    marginLeft: 30,
+    marginRight: 30,
+    backgroundColor: 'white',
+    borderWidth: 3,
+    borderColor: 'black',
+    borderRadius: 15,
+    padding: 10,
 
   },
-  innerModal: {
+  boxModalView: {
+    justifyContent: 'center',  
+    alignItems: 'center',
     alignSelf: 'center',
-    marginTop: 300
-    
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.5)'
+  },
+  modalBoxName: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  modalButtons: {
+    flexDirection: 'row',
+  },
+  deleteButton: {
+    marginBottom: 20
   },
   homeHeader: {
     fontSize: 30,
@@ -54,7 +76,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   boxScroll: {
-    marginBottom: 90,
+    marginBottom: 87,
   },
   plus: {
     fontSize: 20,
@@ -78,19 +100,16 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     fontSize: 20,
     padding: 10,
-    marginBottom: 15
+    marginBottom: 5
   },
   listInProgress: {
     fontSize: 13,
     padding: 10,
     borderWidth: 3,
-    borderRadius: 15,
-    marginBottom: 10,
-    marginTop: 10
+    borderRadius: 6,
+    marginTop: 5,
+    marginBottom: 5
   },
-
-
-
 
 });
 

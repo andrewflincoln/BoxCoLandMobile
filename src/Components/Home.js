@@ -13,7 +13,9 @@ export default class Home extends React.Component {
     this.state={
       boxes: [],
 
-      modalVisible: false
+      modalVisible: false,
+
+      currentBox: {}
 
     }
   }
@@ -24,17 +26,20 @@ export default class Home extends React.Component {
   //change this once storage is done--refreshes from json every time (bad/dumb)
 
   addBox = (newBox) => {
-    newBox.id = this.state.boxes.length+1
+    newBox.id = this.state.boxes[this.state.boxes.length-1].contents.length+1
     this.setState({boxes: [...this.state.boxes, newBox]})
-  //  this console log doesn't show the new box but it does appear-- is there asynchronicity going on here? 
-    console.log(this.state.boxes)
   }
 
-  toggleModal = () => {
-    console.log(this.state.modalVisible)
-    console.log('FIRING THE TOGGLER SIR')
+  deleteBox = (toDelete) => {
+    this.setState({boxes: this.state.boxes.filter(box => box.id != toDelete.id)})
+    this.toggleModal()
+  }
+
+  toggleModal = (box) => {
     this.setState({modalVisible: !this.state.modalVisible})
-    console.log(this.state.modalVisible)
+    if (box) {
+      this.setState({currentBox: box})
+    }
   }
 
 
@@ -42,8 +47,6 @@ export default class Home extends React.Component {
     const {navigate} = this.props.navigation
     return (
       <View>
-
-  
 
         <View style={styles.topView}>
           <TouchableOpacity onPress={() => navigate('Search', {boxes: this.state.boxes})}>
@@ -64,21 +67,18 @@ export default class Home extends React.Component {
         
         <ScrollView style={styles.boxScroll}>
           {
-            
             this.state.boxes.map(box => <Box key={box.id} newBox={box} toggleModal={this.toggleModal}/>)
-            
           }
         </ScrollView>
         
-        
          {this.state.modalVisible ? 
-          <View style={styles.BoxModal}>
-          <BoxModal style={styles.innerModal}
+          <View>
+          <BoxModal
+          box={this.state.currentBox}
+          deleteBox={this.deleteBox}
           toggleModal={this.toggleModal}/>
           </View>
         : null }
-
-
 
       </View>
     );

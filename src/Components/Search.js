@@ -2,7 +2,6 @@ import React from 'react'
 import {View, Text, TextInput, ScrollView, Button} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles'
-import {SearchBar} from 'react-native-elements'
 import Box from './Box'
 
 export default class Search extends React.Component {
@@ -17,18 +16,9 @@ export default class Search extends React.Component {
 
   searchBoxes = (term) => {
     this.setState({searchTerm: term})
-    // console.log('WE ARE SEARCHING NOW')
-    // console.log(this.props.navigation.getParam('boxes'))
     let toSearch = this.props.navigation.getParam('boxes')
-
-    let found = toSearch.filter(box => box.contents.includes(term))
-
-    // let found = this.props.navigation.getParam('boxes').filter(box => {
-    //   box.contents.join().includes(this.state.searchTerm)
-    // })
-
+    let found = toSearch.filter(box => box.contents.join().toLowerCase().includes(term.toLowerCase()))
     this.setState({foundBoxes: found})
-    console.log(JSON.stringify(found))
   }
 
   render() {
@@ -44,7 +34,6 @@ export default class Search extends React.Component {
               value={this.state.searchTerm}
               onChangeText={(searchTerm) =>  this.searchBoxes(searchTerm) }
             />
-{/* //removed button from here */}
         </View>
         <ScrollView style={styles.boxScroll}>
           {

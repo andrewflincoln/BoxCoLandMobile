@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Text, View, StyleSheet, TextInput, Button} from 'react-native'
+import {Text, View, TextInput, Button} from 'react-native'
 import styles from '../styles'
 
 
@@ -12,7 +12,6 @@ export default class Create extends Component {
       boxItems: [],
     }
   }
-
 
   addBox = () => {
     const newBox = {
@@ -48,7 +47,7 @@ export default class Create extends Component {
           />
 
           <Button
-            title='Pack it'
+            title='Add this item'
             onPress={() => this.setState({boxItems: [...this.state.boxItems, this.state.newItem], newItem: ''})}
           />
           
@@ -62,7 +61,7 @@ export default class Create extends Component {
           </Text>
 
           <Button
-            title='Add box'
+            title='Seal This Box'
             onPress = {this.addBox}
           />
         </View>
