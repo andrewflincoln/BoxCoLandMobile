@@ -20,13 +20,13 @@ export default class Home extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.setState({boxes: boxData})
   }
   //change this once storage is done--refreshes from json every time (bad/dumb)
 
   addBox = (newBox) => {
-    newBox.id = this.state.boxes[this.state.boxes.length-1].contents.length+1
+    newBox.id = this.state.boxes[this.state.boxes.length-1].id + 1
     this.setState({boxes: [...this.state.boxes, newBox]})
   }
 
